@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="kz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Адаптив Тапсырмалар</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+body {
+    line-height: 1.5;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px 10px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background: #fff;
+}
+.product {
+    flex: 1 1 calc(33% - 40px);
+    max-width: 300px;
+    background-color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+@media (max-width: 992px) {
+    .product {
+        flex: 1 1 calc(50% - 40px);
+    }
+}
+@media (max-width: 600px) {
+    .product {
+        flex: 1 1 100%;
+    }
+}
+
+.center-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: #d4e0f0;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+}
+.message {
+    padding: 10px 15px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+.message.self {
+    align-self: flex-end;
+    background-color: #0084ff;
+    color: white;
+}
+.message.other {
+    align-self: flex-start;
+    background-color: #e5e5ea;
+    color: black;
+}
+
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px;
+}
+.grid-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.landing {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "main sidebar"
+        "footer footer";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    margin: 20px;
+}
+header { grid-area: header; background: #ffcc00; padding: 20px; border-radius: 10px; }
+main { grid-area: main; background: #00ccff; padding: 20px; border-radius: 10px; }
+aside { grid-area: sidebar; background: #ccff00; padding: 20px; border-radius: 10px; }
+footer { grid-area: footer; background: #ff6699; padding: 20px; border-radius: 10px; }
+
+.profile-card {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.profile-card img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.adaptive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.adaptive-grid .card {
+    background: #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="#">Басты</a>
+    <a href="#">Тауарлар</a>
+    <a href="#">Біз туралы</a>
+    <a href="#">Байланыс</a>
+</nav>
+
+<div class="products">
+    <div class="product">Товар 1</div>
+    <div class="product">Товар 2</div>
+    <div class="product">Товар 3</div>
+</div>
+
+<div class="center-block">
+    <div>Орталық блок</div>
+</div>
+
+<div class="chat">
+    <div class="message self">Салем</div>
+    <div class="message other">Салам</div>
+    <div class="message self">Калайсын?</div>
+</div>
+
+<div class="grid-gallery">
+   <img src="https://avatars.mds.yandex.net/i?id=887143e0469ba157786a641534cf925f_l-4907535-images-thumbs&n=13" alt="">
+    <img src="https://avatars.mds.yandex.net/i?id=887143e0469ba157786a641534cf925f_l-4907535-images-thumbs&n=13" alt="">
+    <img src="https://avatars.mds.yandex.net/i?id=887143e0469ba157786a641534cf925f_l-4907535-images-thumbs&n=13" alt="">
+    <img src="https://avatars.mds.yandex.net/i?id=887143e0469ba157786a641534cf925f_l-4907535-images-thumbs&n=13" alt="">
+    <img src="https://avatars.mds.yandex.net/i?id=887143e0469ba157786a641534cf925f_l-4907535-images-thumbs&n=13" alt="">
+    <img src="https://avatars.mds.yandex.net/i?id=887143e0469ba157786a641534cf925f_l-4907535-images-thumbs&n=13" alt="">
+    <img src="https://avatars.mds.yandex.net/i?id=887143e0469ba157786a641534cf925f_l-4907535-images-thumbs&n=13" alt="">
+    <img src="https://avatars.mds.yandex.net/i?id=887143e0469ba157786a641534cf925f_l-4907535-images-thumbs&n=13" alt="">
+    <img src="https://avatars.mds.yandex.net/i?id=887143e0469ba157786a641534cf925f_l-4907535-images-thumbs&n=13" alt="">
+</div>
+
+<div class="landing">
+    <header>Header</header>
+    <main>Main content</main>
+    <aside>Sidebar</aside>
+    <footer>Footer</footer>
+</div>
+
+<div class="profile-card">
+    <img src="https://static.vecteezy.com/system/resources/previews/002/534/006/original/social-media-chatting-online-blank-profile-picture-head-and-body-icon-people-standing-icon-grey-background-free-vector.jpg" alt="Фото">
+    <div>
+        <h3>Бекжан</h3>
+        <p>16  жас</p>
+    </div>
+</div>
+
+<div class="adaptive-grid">
+    <div class="card">Карточка 1</div>
+    <div class="card">Карточка 2</div>
+    <div class="card">Карточка 3</div>
+    <div class="card">Карточка 4</div>
+    <div class="card">Карточка 5</div>
+</div>
+
+</body>
+</html>
